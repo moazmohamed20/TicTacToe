@@ -7,10 +7,6 @@
         ComputerPlay()
     End Sub
 
-    Private Sub Button_TextChanged(Button As Button, e As EventArgs) Handles B1.TextChanged, B2.TextChanged, B3.TextChanged, B4.TextChanged, B5.TextChanged, B6.TextChanged, B7.TextChanged, B8.TextChanged, B9.TextChanged
-        Button.Enabled = (Button.Text = "")
-    End Sub
-
     Private Sub Button_Click(Button As Button, e As EventArgs) Handles B1.Click, B2.Click, B3.Click, B4.Click, B5.Click, B6.Click, B7.Click, B8.Click, B9.Click
         ' Put O On The Button
         Button.Text = "O"
@@ -21,6 +17,10 @@
 
         ' Computer Turn To play
         ComputerPlay()
+    End Sub
+
+    Private Sub Button_TextChanged(Button As Button, e As EventArgs) Handles B1.TextChanged, B2.TextChanged, B3.TextChanged, B4.TextChanged, B5.TextChanged, B6.TextChanged, B7.TextChanged, B8.TextChanged, B9.TextChanged
+        Button.Enabled = (Button.Text = "")
     End Sub
 
     Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
@@ -37,6 +37,7 @@
 
     Private Sub CheckForWinner()
         Dim Winner As Char
+
         ' Check Diagonals
         If (Button(0) = Button(4) AndAlso Button(4) = Button(8)) OrElse
             (Button(2) = Button(4) AndAlso Button(4) = Button(6)) Then
@@ -198,14 +199,13 @@
             ElseIf (Button(0) = "O" AndAlso Button(8) = "O") OrElse (Button(2) = "O" AndAlso Button(6) = "O") Then
                 MarkPosition = GetPosition(1, 3, 5, 7)
 
-            ElseIf Button(1) = "O" AndAlso Button(3) = "O" Then
-                MarkPosition = GetPosition(0, 2, 6)
-            ElseIf Button(1) = "O" AndAlso Button(5) = "O" Then
-                MarkPosition = GetPosition(0, 2, 8)
-            ElseIf Button(7) = "O" AndAlso Button(3) = "O" Then
-                MarkPosition = GetPosition(0, 6, 8)
-            ElseIf Button(7) = "O" AndAlso Button(5) = "O" Then
-                MarkPosition = GetPosition(2, 6, 8)
+            ElseIf (Button(3) = "O" AndAlso Button(5) = "O") OrElse (Button(1) = "O" AndAlso Button(7) = "O") Then
+                MarkPosition = GetPosition(0, 2)
+
+            ElseIf Button(1) = "O" AndAlso (Button(3) = "O" OrElse Button(5) = "O") Then
+                MarkPosition = GetPosition(0, 2)
+            ElseIf Button(7) = "O" AndAlso (Button(3) = "O" OrElse Button(5) = "O") Then
+                MarkPosition = GetPosition(6, 8)
 
             ElseIf (Button(1) = "O" OrElse Button(7) = "O") Then
                 MarkPosition = GetPosition(3, 5)
