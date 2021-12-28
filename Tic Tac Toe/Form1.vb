@@ -107,28 +107,20 @@
         ' Check If X Can Win
         If Button(0) = "" AndAlso CanWin("X", {{1, 2}, {3, 6}, {4, 8}}) Then
             MarkPosition = 0
-
         ElseIf Button(1) = "" AndAlso CanWin("X", {{0, 2}, {4, 7}}) Then
             MarkPosition = 1
-
         ElseIf Button(2) = "" AndAlso CanWin("X", {{0, 1}, {5, 8}, {4, 6}}) Then
             MarkPosition = 2
-
         ElseIf Button(3) = "" AndAlso CanWin("X", {{4, 5}, {0, 6}}) Then
             MarkPosition = 3
-
         ElseIf Button(4) = "" AndAlso CanWin("X", {{3, 5}, {1, 7}, {0, 8}, {2, 6}}) Then
             MarkPosition = 4
-
         ElseIf Button(5) = "" AndAlso CanWin("X", {{3, 4}, {2, 8}}) Then
             MarkPosition = 5
-
         ElseIf Button(6) = "" AndAlso CanWin("X", {{7, 8}, {0, 3}, {2, 4}}) Then
             MarkPosition = 6
-
         ElseIf Button(7) = "" AndAlso CanWin("X", {{6, 8}, {1, 4}}) Then
             MarkPosition = 7
-
         ElseIf Button(8) = "" AndAlso CanWin("X", {{6, 7}, {2, 5}, {0, 4}}) Then
             MarkPosition = 8
 
@@ -136,28 +128,20 @@
             ' Check If O Can Win
         ElseIf Button(0) = "" AndAlso CanWin("O", {{1, 2}, {3, 6}, {4, 8}}) Then
             MarkPosition = 0
-
         ElseIf Button(1) = "" AndAlso CanWin("O", {{0, 2}, {4, 7}}) Then
             MarkPosition = 1
-
         ElseIf Button(2) = "" AndAlso CanWin("O", {{0, 1}, {5, 8}, {4, 6}}) Then
             MarkPosition = 2
-
         ElseIf Button(3) = "" AndAlso CanWin("O", {{4, 5}, {0, 6}}) Then
             MarkPosition = 3
-
         ElseIf Button(4) = "" AndAlso CanWin("O", {{3, 5}, {1, 7}, {0, 8}, {2, 6}}) Then
             MarkPosition = 4
-
         ElseIf Button(5) = "" AndAlso CanWin("O", {{3, 4}, {2, 8}}) Then
             MarkPosition = 5
-
         ElseIf Button(6) = "" AndAlso CanWin("O", {{7, 8}, {0, 3}, {2, 4}}) Then
             MarkPosition = 6
-
         ElseIf Button(7) = "" AndAlso CanWin("O", {{6, 8}, {1, 4}}) Then
             MarkPosition = 7
-
         ElseIf Button(8) = "" AndAlso CanWin("O", {{6, 7}, {2, 5}, {0, 4}}) Then
             MarkPosition = 8
 
@@ -213,8 +197,14 @@
                 MarkPosition = GetPosition(1, 7)
             End If
         ElseIf Counter = 5 Then
-            If Button(0) = "O" OrElse Button(2) = "O" OrElse Button(6) = "O" OrElse Button(8) = "O" Then
-                MarkPosition = GetPosition(6, 8)
+            If Button(0) = "O" Then
+                MarkPosition = 8
+            ElseIf Button(2) = "O" Then
+                MarkPosition = 6
+            ElseIf Button(6) = "O" Then
+                MarkPosition = 2
+            ElseIf Button(8) = "O" Then
+                MarkPosition = 0
             End If
 
             ' Random Play
