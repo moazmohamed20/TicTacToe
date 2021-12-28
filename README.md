@@ -1,6 +1,6 @@
-# TicTacToe
-# College Project
-3rd Computer Year - Faculty of Engineering Helwan University
+# TicTacToe - College Project
+3rd Computer Engineering - Faculty of Engineering Helwan University
+2021 - 2022
 
 # Course
 Data Structure & Algorithms
