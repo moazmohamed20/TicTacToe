@@ -2,9 +2,6 @@
 3rd Computer Engineering - Faculty of Engineering Helwan University
 2021 - 2022
 
-# Course
-Data Structure & Algorithms
-
 # Team
 1. Moaz Mohamed Mohamed
 2. Mostafa Amin Abbas
