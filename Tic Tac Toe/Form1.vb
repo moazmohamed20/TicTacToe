@@ -7,29 +7,20 @@
         ComputerPlay()
     End Sub
 
-    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        If e.KeyCode = Keys.Escape Then ResetButton_Click(sender, e)
-    End Sub
-
     Private Sub Button_TextChanged(Button As Button, e As EventArgs) Handles B1.TextChanged, B2.TextChanged, B3.TextChanged, B4.TextChanged, B5.TextChanged, B6.TextChanged, B7.TextChanged, B8.TextChanged, B9.TextChanged
         Button.Enabled = (Button.Text = "")
     End Sub
 
     Private Sub Button_Click(Button As Button, e As EventArgs) Handles B1.Click, B2.Click, B3.Click, B4.Click, B5.Click, B6.Click, B7.Click, B8.Click, B9.Click
         ' Put O On The Button
-        If My.Computer.Keyboard.CtrlKeyDown Then
-            Button.Text = "X"
-        Else
-            Button.Text = "O"
-        End If
-
+        Button.Text = "O"
         Counter += 1
 
         ' Check For Winner
         CheckForWinner()
 
         ' Computer Turn To play
-        If Not My.Computer.Keyboard.ShiftKeyDown Then ComputerPlay()
+        ComputerPlay()
     End Sub
 
     Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
