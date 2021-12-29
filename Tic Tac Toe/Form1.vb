@@ -197,14 +197,12 @@
                 MarkPosition = GetPosition(1, 7)
             End If
         ElseIf Counter = 5 Then
-            If Button(0) = "O" Then
-                MarkPosition = 8
-            ElseIf Button(2) = "O" Then
-                MarkPosition = 6
+            If Button(0) = "O" OrElse Button(2) = "O" Then
+                MarkPosition = GetPosition(6, 8)
             ElseIf Button(6) = "O" Then
-                MarkPosition = 2
+                MarkPosition = GetPosition(2, 8)
             ElseIf Button(8) = "O" Then
-                MarkPosition = 0
+                MarkPosition = GetPosition(0, 6)
             End If
 
             ' Random Play
