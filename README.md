@@ -1,7 +1,7 @@
-# TicTacToe - College Project (2021 - 2022)
+# ❌⭕ TicTacToe
 3rd Computer Engineering - Faculty of Engineering Helwan University
 
-# Team
+# 👥 Team
 1. Moaz Mohamed Mohamed
 2. Mostafa Amin Abbas
 3. Mohamed Ahmed Ali
